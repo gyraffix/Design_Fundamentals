@@ -16,8 +16,11 @@ public class ResetPuzzle : PlayerActivatable
     {
         foreach (GameObject obj in boxes)
         {
-            test = true;
-            obj.GetComponent<CubeMovement>().Reset();
+            if (obj != null)
+            {
+                test = true;
+                obj.GetComponent<CubeMovement>().Reset();
+            }
             
         }
     }

@@ -30,25 +30,13 @@ public class CubeMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        //=======- Code in this block was written by ChatGPT -=================
-        //=====================================================================
-        foreach (ContactPoint contact in collision.contacts)
+        if (collision.gameObject.CompareTag("Wall"))
         {
-            Vector3 normal = contact.normal;
-
-            float dot = Vector3.Dot(direction, normal);
-
-            if (dot > 0.9f)
-            {
-                //=============================================================
-                if (collision.gameObject.tag.Equals("Wall"))
-                {
-                    moving = false;
-                }
-                
-            }
-
+            moving = false;
+            Debug.Log("Stop moving");
+            transform.Translate(-direction * 0.1f);
         }
+
         if (collision.gameObject.tag.Equals("Goal"))
         {
 
@@ -66,7 +54,8 @@ public class CubeMovement : MonoBehaviour
     {
         if (moving)
         {
-            rb.AddForce(direction * speed * Time.deltaTime);
+            rb.linearVelocity = (direction * speed);
         }
+        else { rb.linearVelocity = Vector3.zero; }
     }
 }

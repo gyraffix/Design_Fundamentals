@@ -7,13 +7,14 @@ public class OpenDoor : MonoBehaviour
 {
     public Transform Door;
     public float openSpeed;
+    private float startY;
     public float maxY;
     bool open = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        startY = Door.position.y;
     }
 
     public void Open()
@@ -25,7 +26,7 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (open && Door.position.y < maxY)
+        if (open && Door.position.y < startY + maxY)
         {
             Door.Translate(Vector3.up * openSpeed * Time.deltaTime);
         }
