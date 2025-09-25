@@ -1,0 +1,38 @@
+title: Start
+---
+<<declare $quest = "unassigned">>
+===
+
+
+//--------------------------------------------------------------------------------------------------------------------------
+//                                                      QuestGiver
+//--------------------------------------------------------------------------------------------------------------------------
+title: QuestGiver
+---
+<<if $quest == "unassigned">>
+
+    NPC: Hello Traveler. Could you bring me the item?
+
+    <<set $quest to "in progress">>
+
+<<elseif $quest == "in progress">>
+    <<if not has_item("Player", "questItem1")>>
+
+        NPC: Ah, did you fetch the item yet?
+
+    <<else>>
+
+        NPC: Thank you for doing the quest!
+        NPC: Go ahead and enter.
+
+        <<set $quest to "done">>
+    <<endif>>
+
+<<elseif $quest == "done">>
+
+    NPC: The quest is over.
+
+<<endif>>
+===
+
+
