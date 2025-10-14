@@ -1,6 +1,14 @@
 title: Start
 ---
-<<declare $quest = "unassigned">>
+<<declare $quest = "Travel to the tower">>
+
+Once upon a time, there was a powerful wizard.
+One day, the wizard spurned the ire of an evil wizard.
+That evil wizard found a way to take all of his spells and seal them in his tower.
+Except for one.
+For some reason the wizard's ability to push boxes was left.
+You are that wizard.
+
 ===
 
 
