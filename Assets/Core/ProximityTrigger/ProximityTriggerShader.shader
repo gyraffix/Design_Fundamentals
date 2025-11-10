@@ -80,7 +80,7 @@ Shader "Unlit/ProximityTriggerShader"
                 fixed4 col = SampleSpriteTexture (i.uv);
                 col.rgb *= col.a;
 
-                if (col.r > col.g + col.b) {
+                if (col.r > (col.g + col.b) * 2) {
 
                     // Calculate distance from the center of the texture
                     float2 center = float2(0.5, 0.5);

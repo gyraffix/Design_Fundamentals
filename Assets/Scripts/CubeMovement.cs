@@ -4,16 +4,19 @@ public class CubeMovement : MonoBehaviour
 {
     bool moving;
     Vector3 direction;
-    GameObject lastPush;
     public float speed;
     public Vector3 startPos;
     Rigidbody rb;
+    Animator animator;
+    ParticleSystem smoke;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         startPos = transform.position;
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        smoke = gameObject.GetComponentInChildren<ParticleSystem>();
     }
 
     public void StartMoving(GameObject obj)
@@ -41,7 +44,11 @@ public class CubeMovement : MonoBehaviour
         {
 
             collision.gameObject.GetComponent<OpenDoor>().Open();
-            Destroy(gameObject);
+            animator.SetTrigger("Shrink");
+            smoke.transform.localScale = Vector3.one * 5;
+            smoke.Play();
+            Destroy(gameObject, 0.66f);
+
         }
 
     }
