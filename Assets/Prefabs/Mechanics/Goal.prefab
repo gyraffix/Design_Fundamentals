@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 3020303648927047985}
   - component: {fileID: 1351812373315775802}
   - component: {fileID: 96334022555747130}
+  - component: {fileID: 5216694421691171687}
+  - component: {fileID: 1982217360113397092}
+  - component: {fileID: -6090072145299361116}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Goal
@@ -123,9 +126,88 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f244776d0ce9a241afdfa09bca56fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Door: {fileID: 0}
+  door: {fileID: 0}
   openSpeed: 3
   maxY: 4.5
+  open: 0
+  camera: {fileID: 0}
+--- !u!114 &5216694421691171687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459543215279110602}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f2edbfed13a2441b56318f9cc6254a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 0c2d13c3615510e4a8debaef5c39c3de, type: 2}
+  width: 0.2
+  speed: 20
+--- !u!114 &1982217360113397092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459543215279110602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -369425716
+      Data2: 1085100438
+      Data3: -562076487
+      Data4: 513274039
+    Path: event:/Box Hit
+  Event: 
+  EventPlayTrigger: 7
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &-6090072145299361116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459543215279110602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 932518334
+      Data2: 1168580009
+      Data3: -1538906707
+      Data4: 1365173174
+    Path: event:/Door Open
+  Event: 
+  EventPlayTrigger: 7
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &7392091880043451977
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +675,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 4374
+  m_VersionIndex: 4389
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

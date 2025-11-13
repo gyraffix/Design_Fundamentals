@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{71e76daf-cdae-4244-a533-df3c30a56d73}">
+		<property name="assetPath">
+			<value>Owl1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.25</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7e44c961-082a-44d2-a2b3-6bce2d00b46e}</destination>
+		</relationship>
+	</object>
+</objects>

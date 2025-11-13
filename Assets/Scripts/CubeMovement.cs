@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class CubeMovement : MonoBehaviour
@@ -6,6 +7,8 @@ public class CubeMovement : MonoBehaviour
     Vector3 direction;
     public float speed;
     public Vector3 startPos;
+    public GameObject scrapeSFX;
+
     Rigidbody rb;
     Animator animator;
     ParticleSystem smoke;
@@ -13,6 +16,7 @@ public class CubeMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
         startPos = transform.position;
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
@@ -22,6 +26,7 @@ public class CubeMovement : MonoBehaviour
     public void StartMoving(GameObject obj)
     {
             moving = true;
+            scrapeSFX.SetActive(true);
             direction = obj.transform.up * -1;
 
     }
@@ -36,13 +41,14 @@ public class CubeMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             moving = false;
+            scrapeSFX.SetActive(false);
             Debug.Log("Stop moving");
             transform.Translate(-direction * 0.1f);
         }
 
         if (collision.gameObject.tag.Equals("Goal"))
         {
-
+            gameObject.GetComponent<BoxCollider>().enabled = false;
             collision.gameObject.GetComponent<OpenDoor>().Open();
             animator.SetTrigger("Shrink");
             smoke.transform.localScale = Vector3.one * 5;
