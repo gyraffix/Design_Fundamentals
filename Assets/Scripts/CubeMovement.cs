@@ -12,6 +12,8 @@ public class CubeMovement : MonoBehaviour
     Rigidbody rb;
     Animator animator;
     ParticleSystem smoke;
+    ParticleSystem dust;
+    GameObject dustParent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
